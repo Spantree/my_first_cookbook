@@ -9,3 +9,11 @@ end
 service 'httpd' do
   action [ :enable, :start ]
 end
+
+cookbook_file '/var/www/html/index.html' do
+  source 'index.html'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  action :create
+end
