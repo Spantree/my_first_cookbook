@@ -2,15 +2,17 @@
 # Cookbook Name:: my_first_cookbook
 # Recipe:: default
 #
-package 'httpd' do
+include_recipe 'yum-epel'
+
+package 'nginx' do
   action :install
 end
 
-service 'httpd' do
+service 'nginx' do
   action [ :enable, :start ]
 end
 
-template '/var/www/html/index.html' do
+template '/usr/share/nginx/html/index.html' do
   source 'index.html.erb'
   owner 'root'
   group 'root'
