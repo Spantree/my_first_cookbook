@@ -1,1 +1,2 @@
-default['my_first_cookbook']['some_example_attribute'] = 'some_default_configuration_value'
+default['my_first_cookbook']['title'] = 'Some title'
+default['my_first_cookbook']['text'] = 'Hello World'
