@@ -3,6 +3,10 @@
 # Recipe:: default
 #
 include_recipe 'yum-epel'
+include_recipe 'system'
+include_recipe 'ntp'
+
+system_timezone 'America/New_York'
 
 package 'nginx' do
   action :install
